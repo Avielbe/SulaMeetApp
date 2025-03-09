@@ -1,0 +1,448 @@
+{
+    "triviaQuestions": [
+        {
+            "id": "t51",
+            "language": "en",
+            "question": "What is the smallest planet in our solar system?",
+            "options": [
+                "Mercury",
+                "Venus",
+                "Mars",
+                "Pluto"
+            ],
+            "correctIndex": 0
+        },
+        {
+            "id": "t52",
+            "language": "en",
+            "question": "Which element has the chemical symbol 'O'?",
+            "options": [
+                "Gold",
+                "Oxygen",
+                "Osmium",
+                "Hydrogen"
+            ],
+            "correctIndex": 1
+        },
+        {
+            "id": "t53",
+            "language": "en",
+            "question": "What is the capital city of Canada?",
+            "options": [
+                "Toronto",
+                "Vancouver",
+                "Ottawa",
+                "Montreal"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "id": "t54",
+            "language": "en",
+            "question": "In which year did the Titanic sink?",
+            "options": [
+                "1912",
+                "1905",
+                "1898",
+                "1920"
+            ],
+            "correctIndex": 0
+        },
+        {
+            "id": "t55",
+            "language": "en",
+            "question": "Which language is the most widely spoken in the world?",
+            "options": [
+                "English",
+                "Spanish",
+                "Mandarin Chinese",
+                "Hindi"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "id": "t56",
+            "language": "en",
+            "question": "What is the fastest land animal?",
+            "options": [
+                "Cheetah",
+                "Lion",
+                "Horse",
+                "Leopard"
+            ],
+            "correctIndex": 0
+        },
+        {
+            "id": "t57",
+            "language": "en",
+            "question": "Which country is known as the Land of the Rising Sun?",
+            "options": [
+                "China",
+                "Japan",
+                "South Korea",
+                "Thailand"
+            ],
+            "correctIndex": 1
+        },
+        {
+            "id": "t58",
+            "language": "en",
+            "question": "Which planet is known for its prominent rings?",
+            "options": [
+                "Saturn",
+                "Jupiter",
+                "Uranus",
+                "Neptune"
+            ],
+            "correctIndex": 0
+        },
+        {
+            "id": "t59",
+            "language": "en",
+            "question": "What is the largest mammal in the world?",
+            "options": [
+                "Elephant",
+                "Blue Whale",
+                "Giraffe",
+                "Hippopotamus"
+            ],
+            "correctIndex": 1
+        },
+        {
+            "id": "t60",
+            "language": "en",
+            "question": "What is the hardest natural substance on Earth?",
+            "options": [
+                "Gold",
+                "Iron",
+                "Diamond",
+                "Quartz"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "id": "t51_he",
+            "language": "he",
+            "question": "מהו כוכב הלכת הקטן ביותר במערכת השמש שלנו?",
+            "options": [
+                "חמה",
+                "ונוס",
+                "מאדים",
+                "פלוטו"
+            ],
+            "correctIndex": 0
+        },
+        {
+            "id": "t52_he",
+            "language": "he",
+            "question": "איזה יסוד כימי מסומן באות 'O'?",
+            "options": [
+                "זהב",
+                "חמצן",
+                "אוסמיום",
+                "מימן"
+            ],
+            "correctIndex": 1
+        },
+        {
+            "id": "t53_he",
+            "language": "he",
+            "question": "מהי הבירה של קנדה?",
+            "options": [
+                "טורונטו",
+                "ונקובר",
+                "אוטווה",
+                "מונטריאול"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "id": "t54_he",
+            "language": "he",
+            "question": "באיזה שנה טיטניק טבועה?",
+            "options": [
+                "1912",
+                "1905",
+                "1898",
+                "1920"
+            ],
+            "correctIndex": 0
+        },
+        {
+            "id": "t55_he",
+            "language": "he",
+            "question": "איזו שפה מדוברת ביותר בעולם?",
+            "options": [
+                "אנגלית",
+                "ספרדית",
+                "מנדרינית",
+                "הינדי"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "id": "t56_he",
+            "language": "he",
+            "question": "מהי חיית היבשה המהירה ביותר?",
+            "options": [
+                "צ'יטה",
+                "בז",
+                "סוס",
+                "נמר"
+            ],
+            "correctIndex": 0
+        },
+        {
+            "id": "t57_he",
+            "language": "he",
+            "question": "לאיזו מדינה קוראים 'ארץ השמש הזורחת'?",
+            "options": [
+                "סין",
+                "יפן",
+                "דרום קוריאה",
+                "תאילנד"
+            ],
+            "correctIndex": 1
+        },
+        {
+            "id": "t58_he",
+            "language": "he",
+            "question": "איזה כוכב לכת ידוע בטבעות הבולטות שלו?",
+            "options": [
+                "שבתאי",
+                "צדק",
+                "אורנוס",
+                "נפטון"
+            ],
+            "correctIndex": 0
+        },
+        {
+            "id": "t59_he",
+            "language": "he",
+            "question": "מהו היונק הגדול ביותר בעולם?",
+            "options": [
+                "פיל",
+                "לוויתן כחול",
+                "ג'ירפה",
+                "היפופוטם"
+            ],
+            "correctIndex": 1
+        },
+        {
+            "id": "t60_he",
+            "language": "he",
+            "question": "מהו החומר הטבעי הקשה ביותר על כדור הארץ?",
+            "options": [
+                "זהב",
+                "ברזל",
+                "יהלום",
+                "קווארץ"
+            ],
+            "correctIndex": 2
+        }
+    ],
+    "partnerQuestions": [
+        {
+            "id": "p47",
+            "language": "en",
+            "question": "Who is more likely to plan a spontaneous road trip?"
+        },
+        {
+            "id": "p47_he",
+            "language": "he",
+            "question": "מי יותר יזרום לטיול סנפליג?"
+        },
+        {
+            "id": "p48",
+            "language": "en",
+            "question": "Who is more likely to forget an anniversary?"
+        },
+        {
+            "id": "p48_he",
+            "language": "he",
+            "question": "מי הגיוני יותר שישכח את היום נישואין?"
+        },
+        {
+            "id": "p49",
+            "language": "en",
+            "question": "Who is more likely to win a game of chess?"
+        },
+        {
+            "id": "p49_he",
+            "language": "he",
+            "question": "מי כנראה ינצח במשחק שחמט?"
+        },
+        {
+            "id": "p50",
+            "language": "en",
+            "question": "Who is more likely to start a DIY project?"
+        },
+        {
+            "id": "p50_he",
+            "language": "he",
+            "question": "מי הגיוני יותר שירכיב רהיט של עשה זאת בעצמך?"
+        },
+        {
+            "id": "p51",
+            "language": "en",
+            "question": "Who is more likely to try a new restaurant without reservations?"
+        },
+        {
+            "id": "p51_he",
+            "language": "he",
+            "question": "מי יקח את השני למסעדה חדשה?"
+        },
+        {
+            "id": "p52",
+            "language": "en",
+            "question": "Who is more likely to laugh at a bad joke?"
+        },
+        {
+            "id": "p52_he",
+            "language": "he",
+            "question": "מי הגיוני יותר שיצחק מבדיחה גרועה?"
+        },
+        {
+            "id": "p53",
+            "language": "en",
+            "question": "Who is more likely to remember little details about your day?"
+        },
+        {
+            "id": "p53_he",
+            "language": "he",
+            "question": "מי יזכור את הלוז של השני עושה היום?"
+        },
+        {
+            "id": "p54",
+            "language": "en",
+            "question": "Who is more likely to surprise the other with a thoughtful gift?"
+        },
+        {
+            "id": "p54_he",
+            "language": "he",
+            "question": "מי סביר יותר להפתיע את השני עם מתנה מתחשבת?"
+        },
+        {
+            "id": "p55",
+            "language": "en",
+            "question": "Who is more likely to take charge during a crisis?"
+        },
+        {
+            "id": "p55_he",
+            "language": "he",
+            "question": "מי סביר יותר לקחת את ההובלה בזמן משבר?"
+        },
+        {
+            "id": "p56",
+            "language": "en",
+            "question": "Who is more likely to dance when they hear their favorite song?"
+        },
+        {
+            "id": "p56_he",
+            "language": "he",
+            "question": "מי סביר יותר לרקוד כשהם שומעים את השיר האהוב עליהם?"
+        }
+    ],
+    "miniGames": [
+        {
+            "id": "m77",
+            "language": "en",
+            "task": "Perform a 15-second silent charade mimicking your partner’s favorite movie scene."
+        },
+        {
+            "id": "m78",
+            "language": "he",
+            "task": "בצעו מחזה של 15 שניות ללא מילים, מחקים סצנה אהובה של בן/בת הזוג שלכם."
+        },
+        {
+            "id": "m79",
+            "language": "en",
+            "task": "Create a quick duet by singing the chorus of a popular song together."
+        },
+        {
+            "id": "m80",
+            "language": "he",
+            "task": "צרו דו-שירה קצרה על ידי שירה משותפת של פזמון משיר פופולרי."
+        },
+        {
+            "id": "m81",
+            "language": "en",
+            "task": "Write down three things you appreciate about your partner in one minute."
+        },
+        {
+            "id": "m82",
+            "language": "he",
+            "task": "כתבו 3 דברים שאתם מעריכים אצל בן/בת הזוג שלכם במשך דקה."
+        },
+        {
+            "id": "m83",
+            "language": "en",
+            "task": "Imitate the way your partner speaks for 20 seconds."
+        },
+        {
+            "id": "m84",
+            "language": "he",
+            "task": "חקו את האופן שבו בן/בת הזוג שלכם מדבר/ת למשך 20 שניות."
+        },
+        {
+            "id": "m85",
+            "language": "en",
+            "task": "Draw a picture of a dream vacation destination together in 30 seconds."
+        },
+        {
+            "id": "m86",
+            "language": "he",
+            "task": "ציירו יחד תמונה של יעד חופשה חלומי בתוך 30 שניות."
+        },
+        {
+            "id": "m87",
+            "language": "en",
+            "task": "Act out a scene where you both are secret agents on a mission."
+        },
+        {
+            "id": "m88",
+            "language": "he",
+            "task": "הציגו סצנה שבה אתם שני סוכנים בסוד במבצע."
+        },
+        {
+            "id": "m89",
+            "language": "en",
+            "task": "Make up a funny slogan for your relationship and say it three times."
+        },
+        {
+            "id": "m90",
+            "language": "he",
+            "task": "המציאו סלוגן מצחיק לקשר שלכם ואמרו אותו שלוש פעמים."
+        },
+        {
+            "id": "m91",
+            "language": "en",
+            "task": "Swap an item of clothing and wear it for 15 seconds."
+        },
+        {
+            "id": "m92",
+            "language": "he",
+            "task": "החליפו פריט לבוש ולבשו אותו למשך 15 שניות."
+        },
+        {
+            "id": "m93",
+            "language": "en",
+            "task": "Compose a two-line poem about your partner on the spot."
+        },
+        {
+            "id": "m94",
+            "language": "he",
+            "task": "הרכיבו שיר קצר בן שתי שורות על בן/בת הזוג שלכם במקום."
+        },
+        {
+            "id": "m95",
+            "language": "en",
+            "task": "Challenge each other to a 20-second mimicry contest with funny faces."
+        },
+        {
+            "id": "m96",
+            "language": "he",
+            "task": "אתגרו זה את זה בתחרות חיקוי של 20 שניות עם פרצופים מצחיקים."
+        }
+    ]
+}
