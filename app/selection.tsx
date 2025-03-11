@@ -1,20 +1,23 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, Stack } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const GlassmorphicButton = ({ title, onPress }) => {
     return (
-        <TouchableOpacity activeOpacity={0.8} onPress={onPress} style={styles.buttonContainer}>
-            <LinearGradient
-                colors={['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.05)']}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-                style={styles.buttonGradient}
-            >
-                <Text style={styles.buttonText}>{title}</Text>
-            </LinearGradient>
-        </TouchableOpacity>
+        <>
+            <Stack.Screen options={{ headerTitle: 'Select Your Game Mode' }} />
+            <TouchableOpacity activeOpacity={0.8} onPress={onPress} style={styles.buttonContainer}>
+                <LinearGradient
+                    colors={['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.05)']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 1 }}
+                    style={styles.buttonGradient}
+                >
+                    <Text style={styles.buttonText}>{title}</Text>
+                </LinearGradient>
+            </TouchableOpacity>
+        </>
     );
 };
 

@@ -127,13 +127,20 @@ export default function TabTwoScreen() {
             colors={['rgba(255, 255, 255, 0.15)', 'rgba(255, 255, 255, 0.05)']}
             style={styles.contentBox}
           >
-            <Text style={styles.contentText}>
+            {/* <Text style={styles.contentText}>
               Welcome to My Trivia App! This application is designed to provide an engaging and challenging trivia experience. Enjoy a variety of game modes including Trivia Questions, Partner Questions, and Mini Games.
 
               {'\n\n'}Our app is built with passion and commitment to deliver a smooth and visually appealing user experience. Whether you are a trivia enthusiast or just looking for a fun way to test your knowledge, we have something for you.
 
               {'\n\n'}Stay tuned for more updates, and thank you for using our app!
-            </Text>
+            </Text> */}
+            <Text style={styles.contentText}>
+            Welcome to SulaMeet Lite – a streamlined, fun version of the full SulaMeet game, available at www.sulameet.com.
+            
+            {"\n\n"}Hello, my name is Aviel Ben-Eliyahu, and I am a software and mobile developer. This app is designed to provide you with a taste of our exciting question challenges, mini games, and partner tasks.
+            
+            {"\n\n"}For any questions or requests, please contact me by email: mymail@gmail.com.
+          </Text>
           </LinearGradient>
         </ScrollView>
       </LinearGradient>
