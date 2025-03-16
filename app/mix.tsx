@@ -1,10 +1,15 @@
-// app/(tabs)/mix.tsx
+// app/mix.tsx
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StatusBar, View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
+import { translations } from '../i18n/translations';
+import { useLanguage } from './context/_LanguageContext';
 
-const data = require('../../data/questions.json');
+
+
+
+const data = require('../data/questions.json');
 
 export default function MixScreen() {
   const router = useRouter();
@@ -15,6 +20,7 @@ export default function MixScreen() {
   const [timerActive, setTimerActive] = useState(true);
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState('');
+  const { language } = useLanguage();
 
   useEffect(() => {
     const trivia = data.triviaQuestions.filter((q: any) => q.language === 'en').map((q: any) => ({ ...q, type: 'trivia' }));
@@ -115,7 +121,7 @@ export default function MixScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
-      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingVertical: 16    }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingVertical: 16 }}>
         <LinearGradient colors={['#1a2151', '#182848', '#4b6cb7']} style={styles.container}>
           <View style={styles.header}>
             <Text style={styles.title}>Mix Challenge</Text>

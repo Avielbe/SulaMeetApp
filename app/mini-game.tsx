@@ -1,35 +1,10 @@
-// import React from 'react';
-// import { View, Text, StyleSheet } from 'react-native';
-
-// export default function MiniGameScreen() {
-//     return (
-//         <View style={styles.container}>
-//             <Text style={styles.title}>Mini Game - Coming Soon!</Text>
-//         </View>
-//     );
-// }
-
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//         padding: 16,
-//     },
-//     title: {
-//         fontSize: 24,
-//         fontWeight: 'bold',
-//     },
-// });
-
-
-// app/(tabs)/mini-game.tsx
+// app/mini-game.tsx
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StatusBar, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { translations } from '../i18n/translations';
-const language = 'he';
+import { useLanguage } from './context/_LanguageContext';
 
 
 const data = require('../data/questions.json');
@@ -43,6 +18,8 @@ export default function MiniGameScreen() {
     const [timerActive, setTimerActive] = useState(true);
     const [showFeedback, setShowFeedback] = useState(false);
     const [feedbackMessage, setFeedbackMessage] = useState('');
+    const { language } = useLanguage();
+
 
     useEffect(() => {
         let interval: any;

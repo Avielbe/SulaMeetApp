@@ -1,3 +1,5 @@
+// app/trivia.tsx
+
 import React, { useState, useEffect } from 'react';
 import {
   View,
@@ -10,13 +12,16 @@ import {
   Dimensions
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+
+import { useRouter, useLocalSearchParams } from 'expo-router';
+
 import { translations } from '../i18n/translations';
-const language = 'he';
+import { useLanguage } from './context/_LanguageContext';
 
 
 // Load the JSON data from the data folder
 const data = require('../data/questions.json');
-
+const router = useRouter()
 const { width, height } = Dimensions.get('window');
 
 // Custom Button Component with simpler animation
@@ -98,7 +103,10 @@ export default function TriviaScreen() {
   const [feedbackMessage, setFeedbackMessage] = useState('');
   const [timeLeft, setTimeLeft] = useState(15);
   const [timerActive, setTimerActive] = useState(true);
+  const { language } = useLanguage();
 
+
+  const router = useRouter();
   // Filter for English trivia questions
   const triviaQuestions = data.triviaQuestions.filter(q => q.language === 'en');
   const currentQuestion = triviaQuestions[currentIndex];

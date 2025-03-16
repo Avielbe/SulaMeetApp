@@ -5,8 +5,12 @@ import { StyleSheet } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { translations } from '../i18n/translations'
+import { useLanguage } from './context/_LanguageContext';
+
 
 export default function NotFoundScreen() {
+  const { language } = useLanguage() || { language: 'he' };
+
   return (
     <>
       <Stack.Screen options={{ title: translations.notFound.title[language] }} />
