@@ -4,21 +4,21 @@ import { SafeAreaView, StatusBar, View, Text, StyleSheet, TouchableOpacity } fro
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { translations } from '../i18n/translations';
-import { useLanguage } from './context/_LanguageContext';
+import { useLanguage } from '../src/context/_LanguageContext';
 
 
 const data = require('../data/questions.json');
 
 export default function MiniGameScreen() {
+    const { language } = useLanguage();
     const router = useRouter();
-    const miniGames = data.miniGames.filter((q: any) => q.language === 'en');
+    const miniGames = data.miniGames.filter((q: any) => q.language === language);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [timeLeft, setTimeLeft] = useState(60);
     const [timerActive, setTimerActive] = useState(true);
     const [showFeedback, setShowFeedback] = useState(false);
     const [feedbackMessage, setFeedbackMessage] = useState('');
-    const { language } = useLanguage();
 
 
     useEffect(() => {

@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Share } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { translations } from '../i18n/translations';
-import { useLanguage } from './context/_LanguageContext';
+import { useLanguage } from '../src/context/_LanguageContext';
 const { language } = useLanguage();
 
 

@@ -3,22 +3,24 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StatusBar, View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
-import { useLanguage } from './context/_LanguageContext';
+import { useLanguage } from '../src/context/_LanguageContext';
 
 import { translations } from '../i18n/translations';
 
 const data = require('../data/questions.json');
 
 export default function PartnerScreen() {
+    const { language } = useLanguage();
     const router = useRouter();
-    const partnerQuestions = data.partnerQuestions.filter((q: any) => q.language === language);
+    const partnerQuestions = data.partnerQuestions.filter((q) => q.language === language);
+
+    // const partnerQuestions = data.partnerQuestions.filter((q: any) => q.language === language);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [timeLeft, setTimeLeft] = useState(10);
     const [timerActive, setTimerActive] = useState(true);
     const [showFeedback, setShowFeedback] = useState(false);
     const [feedbackMessage, setFeedbackMessage] = useState('');
-    const { language } = useLanguage();
 
 
     useEffect(() => {

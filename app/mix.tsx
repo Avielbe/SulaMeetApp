@@ -4,7 +4,7 @@ import { SafeAreaView, StatusBar, View, Text, StyleSheet, TouchableOpacity, Scro
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { translations } from '../i18n/translations';
-import { useLanguage } from './context/_LanguageContext';
+import { useLanguage } from '../src/context/_LanguageContext';
 
 
 
@@ -22,8 +22,11 @@ export default function MixScreen() {
   const [feedbackMessage, setFeedbackMessage] = useState('');
   const { language } = useLanguage();
 
+
   useEffect(() => {
-    const trivia = data.triviaQuestions.filter((q: any) => q.language === 'en').map((q: any) => ({ ...q, type: 'trivia' }));
+    const trivia = data.triviaQuestions.filter((q) => q.language === language).map((q) => ({ ...q, type: 'trivia' }));
+
+    // const trivia = data.triviaQuestions.filter((q: any) => q.language === 'en').map((q: any) => ({ ...q, type: 'trivia' }));
     const partner = data.partnerQuestions.filter((q: any) => q.language === 'en').map((q: any) => ({ ...q, type: 'partner' }));
     const mini = data.miniGames.filter((q: any) => q.language === 'en').map((q: any) => ({ ...q, type: 'mini' }));
     const all = [...trivia, ...partner, ...mini];

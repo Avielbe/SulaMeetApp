@@ -16,7 +16,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 
 import { translations } from '../i18n/translations';
-import { useLanguage } from './context/_LanguageContext';
+import { useLanguage } from '../src/context/_LanguageContext';
 
 
 // Load the JSON data from the data folder
@@ -95,6 +95,7 @@ const ScoreDisplay = ({ correct, incorrect }) => {
 };
 
 export default function TriviaScreen() {
+  const { language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [incorrectCount, setIncorrectCount] = useState(0);
@@ -103,12 +104,11 @@ export default function TriviaScreen() {
   const [feedbackMessage, setFeedbackMessage] = useState('');
   const [timeLeft, setTimeLeft] = useState(15);
   const [timerActive, setTimerActive] = useState(true);
-  const { language } = useLanguage();
 
 
   const router = useRouter();
   // Filter for English trivia questions
-  const triviaQuestions = data.triviaQuestions.filter(q => q.language === 'en');
+  const triviaQuestions = data.triviaQuestions.filter(q => q.language === language);
   const currentQuestion = triviaQuestions[currentIndex];
 
   // Timer logic

@@ -8,7 +8,7 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { LanguageProvider } from '../context/_LanguageContext';
+import { LanguageProvider } from '../../src/context/_LanguageContext';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
