@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StatusBar, View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
+import { translations } from '../i18n/translations';
+const language = 'he';
+
 const data = require('../data/questions.json');
 
 export default function PartnerScreen() {
@@ -27,7 +30,7 @@ export default function PartnerScreen() {
     }, [timeLeft, timerActive]);
 
     const handleTimeout = () => {
-        setFeedbackMessage("Time's up!");
+        setFeedbackMessage(translations.partner.feedback.success[language]);
         setShowFeedback(true);
         setTimeout(() => {
             goToNextQuestion();
@@ -67,7 +70,8 @@ export default function PartnerScreen() {
             <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
             <LinearGradient colors={['#1a2151', '#182848', '#4b6cb7']} style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={styles.title}>Partner Challenge</Text>
+                    <Text style={styles.title}>{translations.partner.headerTitle[language]}</Text>
+
                     <Text style={styles.progressText}>{`${currentIndex + 1}/${partnerQuestions.length}`}</Text>
                 </View>
                 <View style={styles.timerContainer}>
@@ -84,12 +88,12 @@ export default function PartnerScreen() {
                 <View style={styles.optionsContainer}>
                     <TouchableOpacity onPress={() => handleAnswer(true)} style={styles.buttonContainer}>
                         <LinearGradient colors={['rgba(255,255,255,0.2)', 'rgba(255,255,255,0.05)']} style={styles.buttonGradient}>
-                            <Text style={styles.buttonText}>Completed</Text>
+                            <Text style={styles.buttonText}>{translations.partner.button.completed[language]}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => handleAnswer(false)} style={styles.buttonContainer}>
                         <LinearGradient colors={['rgba(255,255,255,0.2)', 'rgba(255,255,255,0.05)']} style={styles.buttonGradient}>
-                            <Text style={styles.buttonText}>Not Completed</Text>
+                            <Text style={styles.buttonText}>{translations.partner.button.notCompleted[language]}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>

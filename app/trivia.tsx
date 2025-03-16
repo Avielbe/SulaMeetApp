@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  TouchableOpacity, 
-  Alert, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Alert,
   StatusBar,
   SafeAreaView,
-  Dimensions 
+  Dimensions
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { translations } from '../i18n/translations';
+const language = 'he';
+
 
 // Load the JSON data from the data folder
 const data = require('../data/questions.json');
@@ -21,15 +24,15 @@ const GlassmorphicButton = ({ option, index, onPress, disabled, isCorrectAnswer,
   // Determine button style based on state
   let buttonStyle = styles.buttonGradient;
   let textStyle = styles.buttonText;
-  
+
   if (showFeedback && selectedAnswer === index) {
     if (isCorrectAnswer === index) {
-      buttonStyle = {...styles.buttonGradient, ...styles.correctButton};
+      buttonStyle = { ...styles.buttonGradient, ...styles.correctButton };
     } else {
-      buttonStyle = {...styles.buttonGradient, ...styles.wrongButton};
+      buttonStyle = { ...styles.buttonGradient, ...styles.wrongButton };
     }
   }
-  
+
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity
@@ -54,7 +57,7 @@ const GlassmorphicButton = ({ option, index, onPress, disabled, isCorrectAnswer,
 // Progress indicator
 const ProgressBar = ({ current, total }) => {
   const progress = (current / total) * 100;
-  
+
   return (
     <View style={styles.progressContainer}>
       <View style={styles.progressBackground}>
@@ -75,7 +78,7 @@ const ScoreDisplay = ({ correct, incorrect }) => {
         </View>
         <Text style={styles.scoreLabel}>Correct</Text>
       </View>
-      
+
       <View style={styles.scoreItem}>
         <View style={[styles.scoreCircle, styles.wrongCircle]}>
           <Text style={styles.scoreValue}>{incorrect}</Text>
@@ -99,7 +102,7 @@ export default function TriviaScreen() {
   // Filter for English trivia questions
   const triviaQuestions = data.triviaQuestions.filter(q => q.language === 'en');
   const currentQuestion = triviaQuestions[currentIndex];
-  
+
   // Timer logic
   useEffect(() => {
     let interval;
@@ -111,25 +114,25 @@ export default function TriviaScreen() {
       setTimerActive(false);
       handleTimeout();
     }
-    
+
     return () => clearInterval(interval);
   }, [timeLeft, timerActive]);
-  
+
   const handleTimeout = () => {
     setIncorrectCount(prev => prev + 1);
     setFeedbackMessage('Time`s up!');
     showFeedbackAndProceed();
   };
-  
+
   const resetTimer = () => {
     setTimeLeft(15);
     setTimerActive(true);
   };
-  
+
   const handleAnswer = (selectedIndex) => {
     setTimerActive(false);
     setSelectedAnswer(selectedIndex);
-    
+
     if (selectedIndex === currentQuestion.correctIndex) {
       setCorrectCount(prev => prev + 1);
       setFeedbackMessage('Correct!');
@@ -137,41 +140,43 @@ export default function TriviaScreen() {
       setIncorrectCount(prev => prev + 1);
       setFeedbackMessage('Wrong!');
     }
-    
+
     setShowFeedback(true);
     showFeedbackAndProceed();
   };
-  
+
   const showFeedbackAndProceed = () => {
     // After a short delay, clear feedback and move to the next question
     setTimeout(() => {
       setShowFeedback(false);
-      
+
       if (currentIndex < triviaQuestions.length - 1) {
         setCurrentIndex(prev => prev + 1);
         setSelectedAnswer(null);
         resetTimer();
       } else {
-        Alert.alert(
-          '🏆 Quiz Finished!',
-          `Your Score: ${correctCount}/${triviaQuestions.length}`,
-          [
-            {
-              text: 'Play Again',
-              onPress: () => {
-                setCurrentIndex(0);
-                setCorrectCount(0);
-                setIncorrectCount(0);
-                setSelectedAnswer(null);
-                resetTimer();
-              }
-            }
-          ]
-        );
+        router.push(`/final?score=${correctCount}`);
+
+        // Alert.alert(
+        //   '🏆 Quiz Finished!',
+        //   `Your Score: ${correctCount}/${triviaQuestions.length}`,
+        //   [
+        //     {
+        //       text: 'Play Again',
+        //       onPress: () => {
+        //         setCurrentIndex(0);
+        //         setCorrectCount(0);
+        //         setIncorrectCount(0);
+        //         setSelectedAnswer(null);
+        //         resetTimer();
+        //       }
+        //     }
+        //   ]
+        // );
       }
     }, 1500);
   };
-  
+
   // Calculate timer percentage for visual display
   const timerPercentage = (timeLeft / 15) * 100;
 
@@ -186,26 +191,26 @@ export default function TriviaScreen() {
       >
         {/* Header section */}
         <View style={styles.header}>
-          <Text style={styles.title}>TRIVIA MASTER</Text>
+          <Text style={styles.title}>{translations.trivia.headerTitle[language]}</Text>
           <ProgressBar current={currentIndex + 1} total={triviaQuestions.length} />
         </View>
-        
+
         {/* Timer display */}
         <View style={styles.timerContainer}>
           <View style={styles.timerBackground}>
-            <View 
+            <View
               style={[
-                styles.timerFill, 
-                { 
+                styles.timerFill,
+                {
                   width: `${timerPercentage}%`,
                   backgroundColor: timerPercentage < 30 ? '#ff5252' : timerPercentage < 60 ? '#ffab40' : '#1de9b6'
                 }
-              ]} 
+              ]}
             />
           </View>
           <Text style={styles.timerText}>{timeLeft}s</Text>
         </View>
-        
+
         {/* Question section */}
         <View style={styles.questionContainer}>
           <LinearGradient
@@ -215,7 +220,7 @@ export default function TriviaScreen() {
             <Text style={styles.question}>{currentQuestion.question}</Text>
           </LinearGradient>
         </View>
-        
+
         {/* Options section */}
         <View style={styles.optionsContainer}>
           {currentQuestion.options.map((option, index) => (
@@ -231,7 +236,7 @@ export default function TriviaScreen() {
             />
           ))}
         </View>
-        
+
         {/* Feedback banner (instead of overlay) */}
         {showFeedback && (
           <View style={styles.feedbackBanner}>
@@ -243,7 +248,7 @@ export default function TriviaScreen() {
             </Text>
           </View>
         )}
-        
+
         {/* Score display */}
         <ScoreDisplay correct={correctCount} incorrect={incorrectCount} />
       </LinearGradient>

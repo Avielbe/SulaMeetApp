@@ -41,7 +41,7 @@ export default function HomeScreen() {
                 style={styles.buttonGradient}
               >
                 {/* <Text style={styles.buttonText}>Choose Your Adventure</Text> */}
-                <Text style={styles.buttonText}>Choose Your Adventure</Text>
+                <Text style={styles.buttonText}>{translations.home.button.selection[language]}</Text>
 
               </LinearGradient>
             </TouchableOpacity>

@@ -28,6 +28,10 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StatusBar, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
+import { translations } from '../i18n/translations';
+const language = 'he';
+
+
 const data = require('../data/questions.json');
 
 export default function MiniGameScreen() {
@@ -52,7 +56,7 @@ export default function MiniGameScreen() {
     }, [timeLeft, timerActive]);
 
     const handleTimeout = () => {
-        setFeedbackMessage("Time's up!");
+        setFeedbackMessage(translations.miniGame.feedback.timeout[language]);
         setShowFeedback(true);
         setTimeout(() => {
             goToNextQuestion();
@@ -63,9 +67,9 @@ export default function MiniGameScreen() {
         setTimerActive(false);
         if (completed) {
             setScore(prev => prev + 50);
-            setFeedbackMessage("Well done!");
+            setFeedbackMessage(translations.miniGame.feedback.success[language]);
         } else {
-            setFeedbackMessage("Maybe next time.");
+            setFeedbackMessage(translations.miniGame.feedback.failure[language]);
         }
         setShowFeedback(true);
         setTimeout(() => {
@@ -92,7 +96,7 @@ export default function MiniGameScreen() {
             <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
             <LinearGradient colors={['#1a2151', '#182848', '#4b6cb7']} style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={styles.title}>Mini Game Challenge</Text>
+                    <Text style={styles.title}>{translations.miniGame.headerTitle[language]}</Text>
                     <Text style={styles.progressText}>{`${currentIndex + 1}/${miniGames.length}`}</Text>
                 </View>
                 <View style={styles.timerContainer}>
