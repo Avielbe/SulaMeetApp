@@ -1,12 +1,19 @@
+// app/selection.tsx
+
 import React from 'react';
 import { SafeAreaView, StatusBar, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useRouter, Stack } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useLanguage } from '../src/context/_LanguageContext';
+import { translations } from '../i18n/translations';
 
 const GlassmorphicButton = ({ title, onPress }) => {
+    const { language } = useLanguage();
+
+
     return (
         <>
-            <Stack.Screen options={{ headerTitle: 'Select Your Game Mode' }} />
+            <Stack.Screen options={translations.selection.headerTitle[language]} />
             <TouchableOpacity activeOpacity={0.8} onPress={onPress} style={styles.buttonContainer}>
                 <LinearGradient
                     colors={['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.05)']}
@@ -22,6 +29,8 @@ const GlassmorphicButton = ({ title, onPress }) => {
 };
 
 export default function SelectionScreen() {
+    const { language } = useLanguage();
+
     const router = useRouter();
 
     return (
@@ -33,10 +42,10 @@ export default function SelectionScreen() {
                 end={{ x: 1, y: 1 }}
                 style={styles.container}
             >
-                <Text style={styles.title}>Choose a Game Mode</Text>
-                <GlassmorphicButton title="Trivia Questions" onPress={() => router.push('/trivia')} />
-                <GlassmorphicButton title="Partner Questions" onPress={() => router.push('/partner')} />
-                <GlassmorphicButton title="Mini Game" onPress={() => router.push('/mini-game')} />
+                <Text style={styles.title}>{translations.selection.title[language]}</Text>
+                <GlassmorphicButton title={translations.selection.button.trivia[language]} onPress={() => router.push('/trivia')} />
+                <GlassmorphicButton title={translations.selection.button.partner[language]} onPress={() => router.push('/partner')} />
+                <GlassmorphicButton title={translations.selection.button.miniGame[language]} onPress={() => router.push('/mini-game')} />
             </LinearGradient>
         </SafeAreaView>
     );

@@ -90,12 +90,12 @@ export default function MiniGameScreen() {
                 <View style={styles.optionsContainer}>
                     <TouchableOpacity onPress={() => handleAnswer(true)} style={styles.buttonContainer}>
                         <LinearGradient colors={['rgba(255,255,255,0.2)', 'rgba(255,255,255,0.05)']} style={styles.buttonGradient}>
-                            <Text style={styles.buttonText}>Completed</Text>
+                            <Text style={styles.buttonText}>{translations.miniGame.button.completed[language]}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => handleAnswer(false)} style={styles.buttonContainer}>
                         <LinearGradient colors={['rgba(255,255,255,0.2)', 'rgba(255,255,255,0.05)']} style={styles.buttonGradient}>
-                            <Text style={styles.buttonText}>Not Completed</Text>
+                            <Text style={styles.buttonText}>{translations.miniGame.button.notCompleted[language]}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>

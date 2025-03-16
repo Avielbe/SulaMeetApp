@@ -8,9 +8,12 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { LanguageProvider } from '../../src/context/_LanguageContext';
+import { translations } from '../../i18n/translations';
+import { useLanguage } from '../../src/context/_LanguageContext';
+
 
 export default function TabLayout() {
+  const { language } = useLanguage();
   const colorScheme = useColorScheme();
 
   return (
@@ -31,14 +34,14 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'בית',
+          title: translations.tabs.home[language],
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'הגדרות',
+          title: translations.tabs.settings[language],
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
       />

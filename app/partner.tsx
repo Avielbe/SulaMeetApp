@@ -35,26 +35,40 @@ export default function PartnerScreen() {
     }, [timeLeft, timerActive]);
 
     const handleTimeout = () => {
-        setFeedbackMessage(translations.partner.feedback.success[language]);
+        setFeedbackMessage(translations.partner.feedback.timeout[language]);
         setShowFeedback(true);
         setTimeout(() => {
             goToNextQuestion();
         }, 1500);
     };
 
+    // const handleAnswer = (completed: boolean) => {
+    //     setTimerActive(false);
+    //     if (completed) {
+    //         setScore(prev => prev + 30);
+    //         setFeedbackMessage("Great job!");
+    //     } else {
+    //         setFeedbackMessage("Maybe next time.");
+    //     }
+    //     setShowFeedback(true);
+    //     setTimeout(() => {
+    //         goToNextQuestion();
+    //     }, 1500);
+    // };
     const handleAnswer = (completed: boolean) => {
         setTimerActive(false);
         if (completed) {
             setScore(prev => prev + 30);
-            setFeedbackMessage("Great job!");
+            setFeedbackMessage(translations.partner.feedback.success[language]);
         } else {
-            setFeedbackMessage("Maybe next time.");
+            setFeedbackMessage(translations.partner.feedback.failure[language]);
         }
         setShowFeedback(true);
         setTimeout(() => {
             goToNextQuestion();
         }, 1500);
     };
+    
 
     const goToNextQuestion = () => {
         if (currentIndex < partnerQuestions.length - 1) {

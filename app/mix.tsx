@@ -62,7 +62,7 @@ export default function MixScreen() {
   };
 
   const handleTimeout = () => {
-    setFeedbackMessage("Time's up!");
+    setFeedbackMessage(translations.mix.feedback.timeout[language]);
     setShowFeedback(true);
     setTimeout(() => {
       goToNextQuestion();
@@ -77,10 +77,11 @@ export default function MixScreen() {
     if (q.type === 'trivia') {
       if (answer === q.correctIndex) {
         setScore(prev => prev + 10);
-        setFeedbackMessage("Correct!");
+        setFeedbackMessage(translations.mix.feedback.trivia.correct[language]);
       } else {
-        setFeedbackMessage("Wrong!");
+        setFeedbackMessage(translations.mix.feedback.trivia.wrong[language]);
       }
+
     } else if (q.type === 'partner') {
       if (answer === true) {
         setScore(prev => prev + 30);
@@ -127,7 +128,7 @@ export default function MixScreen() {
       <ScrollView contentContainerStyle={{ flexGrow: 1, paddingVertical: 16 }}>
         <LinearGradient colors={['#1a2151', '#182848', '#4b6cb7']} style={styles.container}>
           <View style={styles.header}>
-            <Text style={styles.title}>Mix Challenge</Text>
+            <Text style={styles.title}>{translations.mix.headerTitle[language]}</Text>
             <Text style={styles.progressText}>{`${currentIndex + 1}/${questions.length}`}</Text>
           </View>
           <View style={styles.timerContainer}>

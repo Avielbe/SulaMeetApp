@@ -7,6 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { LanguageProvider } from '../src/context/_LanguageContext';
+import { useLanguage } from '../../src/context/_LanguageContext'; // <-- Added import
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 

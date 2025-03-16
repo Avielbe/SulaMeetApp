@@ -75,20 +75,22 @@ const ProgressBar = ({ current, total }) => {
 
 // Score display
 const ScoreDisplay = ({ correct, incorrect }) => {
+  const { language } = useLanguage();
+
   return (
     <View style={styles.scoreContainer}>
       <View style={styles.scoreItem}>
         <View style={styles.scoreCircle}>
           <Text style={styles.scoreValue}>{correct}</Text>
         </View>
-        <Text style={styles.scoreLabel}>Correct</Text>
+        <Text style={styles.scoreLabel}>{translations.trivia.scoreLabel.correct[language]}</Text>
       </View>
 
       <View style={styles.scoreItem}>
         <View style={[styles.scoreCircle, styles.wrongCircle]}>
           <Text style={styles.scoreValue}>{incorrect}</Text>
         </View>
-        <Text style={styles.scoreLabel}>Wrong</Text>
+        <Text style={styles.scoreLabel}>{translations.trivia.scoreLabel.wrong[language]}</Text>
       </View>
     </View>
   );
@@ -128,7 +130,7 @@ export default function TriviaScreen() {
 
   const handleTimeout = () => {
     setIncorrectCount(prev => prev + 1);
-    setFeedbackMessage('Time`s up!');
+    setFeedbackMessage(translations.trivia.feedback.timeout[language]);
     showFeedbackAndProceed();
   };
 
@@ -143,10 +145,10 @@ export default function TriviaScreen() {
 
     if (selectedIndex === currentQuestion.correctIndex) {
       setCorrectCount(prev => prev + 1);
-      setFeedbackMessage('Correct!');
+      setFeedbackMessage(translations.trivia.feedback.correct[language]);
     } else {
       setIncorrectCount(prev => prev + 1);
-      setFeedbackMessage('Wrong!');
+      setFeedbackMessage(translations.trivia.feedback.wrong[language]);
     }
 
     setShowFeedback(true);
