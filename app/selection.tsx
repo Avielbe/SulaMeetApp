@@ -13,7 +13,6 @@ const GlassmorphicButton = ({ title, onPress }) => {
 
     return (
         <>
-            <Stack.Screen options={translations.selection.headerTitle[language]} />
             <TouchableOpacity activeOpacity={0.8} onPress={onPress} style={styles.buttonContainer}>
                 <LinearGradient
                     colors={['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.05)']}
@@ -30,24 +29,27 @@ const GlassmorphicButton = ({ title, onPress }) => {
 
 export default function SelectionScreen() {
     const { language } = useLanguage();
-
     const router = useRouter();
 
     return (
-        <SafeAreaView style={styles.safeArea}>
-            <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
-            <LinearGradient
-                colors={['#1a2151', '#182848', '#4b6cb7']}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-                style={styles.container}
-            >
-                <Text style={styles.title}>{translations.selection.title[language]}</Text>
-                <GlassmorphicButton title={translations.selection.button.trivia[language]} onPress={() => router.push('/trivia')} />
-                <GlassmorphicButton title={translations.selection.button.partner[language]} onPress={() => router.push('/partner')} />
-                <GlassmorphicButton title={translations.selection.button.miniGame[language]} onPress={() => router.push('/mini-game')} />
-            </LinearGradient>
-        </SafeAreaView>
+        <>
+            <Stack.Screen options={translations.selection.headerTitle[language]} />
+
+            <SafeAreaView style={styles.safeArea}>
+                <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+                <LinearGradient
+                    colors={['#1a2151', '#182848', '#4b6cb7']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 1 }}
+                    style={styles.container}
+                >
+                    <Text style={styles.title}>{translations.selection.title[language]}</Text>
+                    <GlassmorphicButton title={translations.selection.button.trivia[language]} onPress={() => router.push('/trivia')} />
+                    <GlassmorphicButton title={translations.selection.button.partner[language]} onPress={() => router.push('/partner')} />
+                    <GlassmorphicButton title={translations.selection.button.miniGame[language]} onPress={() => router.push('/mini-game')} />
+                </LinearGradient>
+            </SafeAreaView>
+        </>
     );
 }
 

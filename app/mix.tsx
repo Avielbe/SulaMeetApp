@@ -26,9 +26,8 @@ export default function MixScreen() {
   useEffect(() => {
     const trivia = data.triviaQuestions.filter((q) => q.language === language).map((q) => ({ ...q, type: 'trivia' }));
 
-    // const trivia = data.triviaQuestions.filter((q: any) => q.language === 'en').map((q: any) => ({ ...q, type: 'trivia' }));
-    const partner = data.partnerQuestions.filter((q: any) => q.language === 'en').map((q: any) => ({ ...q, type: 'partner' }));
-    const mini = data.miniGames.filter((q: any) => q.language === 'en').map((q: any) => ({ ...q, type: 'mini' }));
+    const partner = data.partnerQuestions.filter((q: any) => q.language === language).map((q: any) => ({ ...q, type: 'partner' }));
+    const mini = data.miniGames.filter((q: any) => q.language === language).map((q: any) => ({ ...q, type: 'mini' }));
     const all = [...trivia, ...partner, ...mini];
     shuffle(all);
     setQuestions(all);
@@ -85,16 +84,19 @@ export default function MixScreen() {
     } else if (q.type === 'partner') {
       if (answer === true) {
         setScore(prev => prev + 30);
-        setFeedbackMessage("Great job!");
+        // setFeedbackMessage("Great job!");
+        setFeedbackMessage(translations.mix.feedback.partner.success[language]);
+
       } else {
-        setFeedbackMessage("Maybe next time.");
+        // setFeedbackMessage("Maybe next time.");
+        setFeedbackMessage(translations.mix.feedback.partner.failure[language]);
       }
     } else if (q.type === 'mini') {
       if (answer === true) {
         setScore(prev => prev + 50);
-        setFeedbackMessage("Well done!");
+        setFeedbackMessage(translations.mix.feedback.mini.success[language]);
       } else {
-        setFeedbackMessage("Maybe next time.");
+        setFeedbackMessage(translations.mix.feedback.mini.failure[language]);
       }
     }
     setShowFeedback(true);

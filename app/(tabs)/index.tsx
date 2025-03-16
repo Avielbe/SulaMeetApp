@@ -3,12 +3,14 @@ import React from 'react';
 import { SafeAreaView, StatusBar, Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useRouter, Stack } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useLanguage } from '../../src/context/_LanguageContext';
 
 import { translations } from '../../i18n/translations';
 
-const language = 'he';
 
 export default function HomeScreen() {
+  const { language } = useLanguage();
+
   const router = useRouter();
 
   const handleSelectionMode = () => {

@@ -4,7 +4,6 @@ import { View, Text, TouchableOpacity, StyleSheet, Share } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { translations } from '../i18n/translations';
 import { useLanguage } from '../src/context/_LanguageContext';
-const { language } = useLanguage();
 
 
 export default function FinalScreen() {

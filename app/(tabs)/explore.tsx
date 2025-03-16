@@ -7,7 +7,9 @@ import { useLanguage } from '../../src/context/_LanguageContext';
 
 
 export default function TabTwoScreen() {
-  const { language, setLanguage } = useLanguage();
+  // const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
+
   const isEnglish = language === 'en';
   const toggleLanguage = () => {
     setLanguage(isEnglish ? 'he' : 'en');
