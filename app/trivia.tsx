@@ -21,7 +21,6 @@ import { useLanguage } from '../src/context/_LanguageContext';
 
 // Load the JSON data from the data folder
 const data = require('../data/questions.json');
-const router = useRouter()
 const { width, height } = Dimensions.get('window');
 
 // Custom Button Component with simpler animation

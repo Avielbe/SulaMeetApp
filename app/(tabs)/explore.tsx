@@ -4,11 +4,11 @@ import { SafeAreaView, ScrollView, StatusBar, Text, StyleSheet } from 'react-nat
 import { LinearGradient } from 'expo-linear-gradient';
 import { Switch, View } from 'react-native';
 import { useLanguage } from '../../src/context/_LanguageContext';
+import { translations } from '../../i18n/translations';
 
 
 export default function TabTwoScreen() {
-  // const { language, setLanguage } = useLanguage();
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
   const isEnglish = language === 'en';
   const toggleLanguage = () => {
